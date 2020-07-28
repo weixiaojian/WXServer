@@ -1,0 +1,72 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /WXServer
+  tomcat:
+    uri-encoding: UTF-8
+#------------------------设置编码格式-------------------------
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    encoding: UTF-8
+
+#-------------------------mvc页面配置-------------------------
+  mvc:
+    view:
+      prefix: /templates
+      suffix: .html
+
+#-------------------------thymeleaf页面配置-------------------------
+  thymeleaf:
+    encoding: UTF-8
+    mode: HTML5
+    cache: false
+    servlet:
+      content-type: text/html
+
+#-------------------------数据库配置-------------------------
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@127.0.0.1:3306/db
+    username: admin
+    password: admin
+    druid:
+      max-wait: 1500
+      initial-size: 20
+      max-active: 220
+      min-idle: 1
+      remove-abandoned: true
+      remove-abandoned-timeout: 180
+
+#-------------------------mybatis-plus配置-------------------------
+mybatis-plus:
+  mapper-locations: classpath:/com/zhitengda/*/mapper/*Mapper.xml
+  type-aliases-package: com.zhitengda
+  global-config:
+    banner: false
+    db-config:
+      id-type: UUID
+      table-underline: true
+    mapper-registry-cache: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    jdbc-type-for-null: null
+
+#-------------------------sql输出-------------------------
+logging:
+  level:
+    com.zhitengda.mapper: debug
+
+#-------------------------微信配置-------------------------
+weixin:
+  app-id: 111
+  app-secret: 222
+  token: langao
+  accessTokenUrl: https://api.weixin.qq.com/cgi-bin/token
+  jsapiTicketUrl: https://api.weixin.qq.com/cgi-bin/ticket/getticket
+  createMenuUrl: https://api.weixin.qq.com/cgi-bin/menu/create?access_token=

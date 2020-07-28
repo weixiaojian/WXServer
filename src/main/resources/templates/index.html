@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<div th:include="common/_js::html"></div>
+<script type="text/javascript" th:src="@{/js/index/index.js}"></script>
+<div id="workingArea">
+    <h1>
+        {{appid}}<br/>
+        {{wxUserInfo}}<br/>
+    </h1>
+</div>
+</body>
+</html>

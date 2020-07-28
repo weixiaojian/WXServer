@@ -1,0 +1,26 @@
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find java src paths:  [E:\idea-work\imwj\WXServer\src\main\java\]
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: project type not set, try to figure out...
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start find controllers in path : E:\idea-work\imwj\WXServer\src\main\java\
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : IndexController.java
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : UserController.java
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : WxMsgController.java
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : IndexController.java
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : IndexController.java
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : UserController.java
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\imwj\WXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : UserController.java
+七月 28, 2020 5:22:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : WxMsgController.java
