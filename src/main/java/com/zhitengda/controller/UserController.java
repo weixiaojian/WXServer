@@ -1,10 +1,8 @@
 package com.zhitengda.controller;
 
-import com.zhitengda.util.RetResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,17 +16,15 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/user")
 public class UserController {
 
-    @ResponseBody
     @RequestMapping("/auth")
-    public RetResult authorization(HttpServletRequest req, HttpServletResponse res,
+    public String authorization(HttpServletRequest req, HttpServletResponse res,
                                    @RequestParam String code){
         try {
             //TODO saveOrUpdateUser
-
-            return RetResult.success();
+            return "index";
         }catch (Exception e){
             e.printStackTrace();
-            return RetResult.fail(e.getMessage());
+            return null;
         }
     }
 
