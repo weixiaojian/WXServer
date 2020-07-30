@@ -7,6 +7,8 @@ import com.zhitengda.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * UserService实现类
  * @author langao_q
@@ -18,19 +20,19 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
-
     @Override
-    public WxUser queryByOpneId(String openid) {
+    public WxUser saveOrUpdate(WxUser wxUser) {
         QueryWrapper wrapper = new QueryWrapper();
-        wrapper.eq("OPEN_ID", openid);
-        return userMapper.selectOne(wrapper);
+        wrapper.eq("OPEN_ID", wxUser.getOpenId());
+        WxUser user = userMapper.selectOne(wrapper);
+        if(user == null){
+            wxUser.setUserId(wxUser.getOpenId());
+            userMapper.insert(wxUser);
+            return wxUser;
+        }else {
+            user.setUpdateDate(new Date());
+            userMapper.updateById(user);
+            return user;
+        }
     }
-
-    @Override
-    public WxUser saveUser(WxUser user) {
-        Integer total = userMapper.insert(user);
-        return total>0?user:null;
-    }
-
-
 }

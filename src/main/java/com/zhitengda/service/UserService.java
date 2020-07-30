@@ -10,16 +10,10 @@ import com.zhitengda.entity.WxUser;
 public interface UserService {
 
     /**
-     * 查询指定用户信息
-     * @param openid
+     * 保存或更新用户信息
+     * @param wxUser
      * @return
      */
-    WxUser queryByOpneId(String openid);
+    WxUser saveOrUpdate(WxUser wxUser);
 
-    /**
-     * 保存用户信息
-     * @param user
-     * @return
-     */
-    WxUser saveUser(WxUser user);
 }

@@ -1,5 +1,6 @@
 package com.zhitengda.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author langao_q
  * @since 2020-07-17 18:04
  */
+@Slf4j
 @Controller
 @RequestMapping("/index")
 public class IndexController {
@@ -25,5 +27,11 @@ public class IndexController {
     @RequestMapping("/auth")
     public String auth(){
         return "index3";
+    }
+
+    @RequestMapping("/error")
+    public String error(String msg){
+        log.error("----错误----" + msg);
+        return "error";
     }
 }

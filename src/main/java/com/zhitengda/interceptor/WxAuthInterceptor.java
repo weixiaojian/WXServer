@@ -5,6 +5,8 @@ import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.zhitengda.config.WxConfig;
+import com.zhitengda.entity.WxUser;
+import com.zhitengda.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -32,6 +35,9 @@ public class WxAuthInterceptor implements HandlerInterceptor {
 
     @Autowired
     private WxConfig wxConfig;
+
+    @Autowired
+    private UserService userService;
 
     /**
      * 授权后获取用户基本信息
@@ -60,7 +66,7 @@ public class WxAuthInterceptor implements HandlerInterceptor {
 
 
     @Override
-    public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object handler) {
+    public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object handler) throws IOException {
         //code只能使用一次，5分钟未被使用自动过期
         String code = req.getParameter("code");
         String uri = req.getRequestURI();
@@ -123,6 +129,9 @@ public class WxAuthInterceptor implements HandlerInterceptor {
                   "unionid": "o6_bmasdasdsad6_2sgVt7hMZOPfL"
                 }*/
                 log.info("-----第三步：保存/更新用户信息-----" + objUser);
+                WxUser wxUser = new WxUser();
+                wxUser.setOpenId(objUser.getStr("openid"));
+                userService.saveOrUpdate(wxUser);
                 //添加session
                 req.getSession().setAttribute(USER_IFNO, objUser);
                 //保存/更新用户信息后，重定向到业务地址
@@ -130,8 +139,10 @@ public class WxAuthInterceptor implements HandlerInterceptor {
                 return false;
             }
         } catch (Exception e) {
-            log.error("-----授权错误-----" + e.getMessage());
-            return true;
+            log.error("-----授权错误-----"+  e);
+            req.getSession().setAttribute("errorMgs", e);
+            res.sendRedirect(req.getContextPath() + "/error");
+            return false;
         }
     }
 

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<div id="workingArea">
+
+    <h1>
+        系统出现了预料之外的错误，请联系管理员！<br/>
+
+        错误信息：<span th:text="${session.errorMgs}"></span><br/>
+    </h1>
+</div>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.zhitengda.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -14,14 +15,12 @@ import java.util.Date;
 @TableName("TAB_WX_USER")
 public class WxUser {
 
-    private String guid;
-    private String account;
-    private String password;
-    private String zhName;
+    @TableId
+    private String userId;
+    private String name;
     private String phone;
-    private Long blStatus;
     private Date createDate;
-    private String type;
+    private Date updateDate;
     private String siteName;
     private String openId;
 
