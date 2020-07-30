@@ -31,9 +31,9 @@ spring:
 #-------------------------数据库配置-------------------------
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@127.0.0.1:3306/db
-    username: admin
-    password: admin
+    url: jdbc:oracle:thin:@42.194.209.206:33578/yzad
+    username: yzad
+    password: yuanzad_20200709!#!
     druid:
       max-wait: 1500
       initial-size: 20
@@ -44,7 +44,7 @@ spring:
 
 #-------------------------mybatis-plus配置-------------------------
 mybatis-plus:
-  mapper-locations: classpath:/com/zhitengda/*/mapper/*Mapper.xml
+  mapper-locations: classpath:/com/yourpackage/*/mapper/*Mapper.xml
   type-aliases-package: com.zhitengda
   global-config:
     banner: false
@@ -64,8 +64,8 @@ logging:
 
 #-------------------------微信配置-------------------------
 weixin:
-  app-id: 111
-  app-secret: 222
+  app-id: wx6447c1fe6b20697b
+  app-secret: 4b912ad95576639faa948011bfce311f
   token: langao
   accessTokenUrl: https://api.weixin.qq.com/cgi-bin/token
   jsapiTicketUrl: https://api.weixin.qq.com/cgi-bin/ticket/getticket
