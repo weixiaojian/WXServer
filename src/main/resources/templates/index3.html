@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<div th:include="common/_js::html"></div>
+<div id="workingArea">
+
+    <h1>
+        成功！
+    </h1>
+
+    <span th:text="${session.userInfo.country}"></span><br/>
+    <span th:text="${session.userInfo.city}"></span><br/>
+    <span th:text="${session.userInfo.openid}"></span><br/>
+    <span th:text="${session.userInfo.sex}"></span><br/>
+    <span th:text="${session.userInfo.nickname}"></span><br/>
+    <img th:src="${session.userInfo.headimgurl}" /><br/>
+</div>
+</body>
+</html>

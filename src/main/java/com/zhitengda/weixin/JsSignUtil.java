@@ -9,9 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author langao_q
- * @create 2020-07-13 14:52
  * 微信js签名验证类
+ * @author langao_q
+ * @since 2020-07-13 14:52
  */
 public class JsSignUtil {
 

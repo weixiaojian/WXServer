@@ -5,9 +5,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * @author langao_q
- * @create 2020-07-21 15:13
  * 微信配置类
+ * @author langao_q
+ * @since 2020-07-21 15:13
  */
 @Data
 @Component

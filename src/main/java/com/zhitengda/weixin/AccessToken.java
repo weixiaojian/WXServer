@@ -1,9 +1,9 @@
 package com.zhitengda.weixin;
 
 /**
- * @author langao_q
- * @create 2020-07-28 10:26
  * AccessToken实体类
+ * @author langao_q
+ * @since 2020-07-28 10:26
  */
 public class AccessToken {
 

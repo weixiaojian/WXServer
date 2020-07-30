@@ -4,9 +4,9 @@ import io.github.yedaxia.apidocs.Docs;
 import io.github.yedaxia.apidocs.DocsConfig;
 
 /**
- * @author langao_q
- * @create 2020-07-28 17:18
  * api文档生成
+ * @author langao_q
+ * @since 2020-07-28 17:18
  */
 public class ApiUtil {
 

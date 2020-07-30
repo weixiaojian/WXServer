@@ -31,9 +31,9 @@ spring:
 #-------------------------数据库配置-------------------------
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@42.194.209.206:33578/yzad
-    username: yzad
-    password: yuanzad_20200709!#!
+    url: jdbc:oracle:thin:@127.0.0.1:3306/admin
+    username: admin
+    password: admin
     druid:
       max-wait: 1500
       initial-size: 20
@@ -64,8 +64,8 @@ logging:
 
 #-------------------------微信配置-------------------------
 weixin:
-  app-id: wx6447c1fe6b20697b
-  app-secret: 4b912ad95576639faa948011bfce311f
+  app-id: 123
+  app-secret: 123
   token: langao
   accessTokenUrl: https://api.weixin.qq.com/cgi-bin/token
   jsapiTicketUrl: https://api.weixin.qq.com/cgi-bin/ticket/getticket

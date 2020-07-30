@@ -3,9 +3,9 @@ package com.zhitengda.exception;
 import com.zhitengda.util.RetResult;
 
 /**
- * @author langao_q
- * @create 2020-07-28 10:13
  * 自定义异常
+ * @author langao_q
+ * @since 2020-07-28 10:13
  */
 public class MsException extends RuntimeException{
 

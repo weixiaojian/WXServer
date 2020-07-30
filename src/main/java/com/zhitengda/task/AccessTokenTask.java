@@ -12,9 +12,9 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- * @author langao_q
- * @create 2020-07-28 10:38
  * 获取AccessToken/JsapiTicket任务
+ * @author langao_q
+ * @since 2020-07-28 10:38
  */
 @Slf4j
 @Component

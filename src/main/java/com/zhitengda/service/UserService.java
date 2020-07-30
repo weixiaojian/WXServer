@@ -3,8 +3,9 @@ package com.zhitengda.service;
 import com.zhitengda.entity.WxUser;
 
 /**
+ * userService接口
  * @author langao_q
- * @create 2020-07-20 10:19
+ * @since 2020-07-20 10:19
  */
 public interface UserService {
 

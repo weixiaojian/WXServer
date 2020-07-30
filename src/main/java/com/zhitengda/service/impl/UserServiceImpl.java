@@ -8,8 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
+ * UserService实现类
  * @author langao_q
- * @create 2020-07-20 10:19
+ * @since 2020-07-20 10:19
  */
 @Service
 public class UserServiceImpl implements UserService {

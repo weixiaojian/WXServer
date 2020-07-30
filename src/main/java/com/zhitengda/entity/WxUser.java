@@ -6,8 +6,9 @@ import lombok.Data;
 import java.util.Date;
 
 /**
+ * 微信表实体
  * @author langao_q
- * @create 2020-07-20 10:54
+ * @since 2020-07-20 10:54
  */
 @Data
 @TableName("TAB_WX_USER")

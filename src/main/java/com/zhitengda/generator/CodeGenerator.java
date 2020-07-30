@@ -10,9 +10,9 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 /**
- * @author langao_q
- * @create 2020-07-22 10:41
  * mybatis plus代码生成器
+ * @author langao_q
+ * @since 2020-07-22 10:41
  */
 public class CodeGenerator {
 

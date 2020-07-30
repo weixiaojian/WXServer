@@ -16,9 +16,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author langao_q
- * @create 2020-07-16 14:28
  * 请求日志输出类
+ * @author langao_q
+ * @since 2020-07-16 14:28
  */
 @Slf4j
 @Aspect

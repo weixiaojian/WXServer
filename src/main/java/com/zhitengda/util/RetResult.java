@@ -3,9 +3,9 @@ package com.zhitengda.util;
 import lombok.Data;
 
 /**
- * @author langao_q
- * @create 2020-07-13 14:52
  * 统一的 REST响应对象
+ * @author langao_q
+ * @since 2020-07-13 14:52
  */
 @Data
 public class RetResult {

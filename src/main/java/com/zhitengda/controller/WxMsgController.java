@@ -19,9 +19,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author langao_q
- * @create 2020-07-28 9:51
  * 微信msg控制类
+ * @author langao_q
+ * @since 2020-07-28 9:51
  */
 @Slf4j
 @Controller
@@ -33,7 +33,6 @@ public class WxMsgController {
 
     /**
      * 创建菜单
-     * @param req
      * @param res
      * @throws Exception
      */

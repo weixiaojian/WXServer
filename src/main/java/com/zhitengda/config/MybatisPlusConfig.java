@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author langao_q
- * @create 2020-07-20 10:40
  * mybatis-plus扫描Mapper.java
+ * @author langao_q
+ * @since 2020-07-20 10:40
  */
 @EnableTransactionManagement
 @Configuration

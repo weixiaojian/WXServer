@@ -5,8 +5,9 @@ import com.zhitengda.entity.WxUser;
 import org.springframework.stereotype.Repository;
 
 /**
+ * userMapper
  * @author langao_q
- * @create 2020-07-20 10:20
+ * @since 2020-07-20 10:20
  */
 @Repository
 public interface UserMapper extends BaseMapper<WxUser> {
