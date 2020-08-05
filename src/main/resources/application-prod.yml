@@ -39,8 +39,6 @@ spring:
       initial-size: 20
       max-active: 220
       min-idle: 1
-      remove-abandoned: true
-      remove-abandoned-timeout: 180
 
 #-------------------------mybatis-plus配置-------------------------
 mybatis-plus:
