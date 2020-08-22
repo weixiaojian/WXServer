@@ -1,7 +1,7 @@
 # 微信公众号开发平台
 ## 版本
 ```
-SpringBoot 2.1.15.RELEASE
+SpringBoot 2.3.0.RELEASE
 
 Mybatis Plus 3.1.2
 
