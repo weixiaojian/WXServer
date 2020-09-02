@@ -4,6 +4,7 @@ import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.zhitengda.config.WxConfig;
+import com.zhitengda.util.RetResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,7 +63,7 @@ public class IndexController {
      */
     @ResponseBody
     @RequestMapping("/auth")
-    public String authorization(String code){
+    public RetResult authorization(String code){
         try {
             log.info("-----第一步：获取code-----" + code);
             Map<String, Object> mapOpenid = new HashMap<String, Object>();
@@ -83,7 +84,7 @@ public class IndexController {
 
             JSONObject objUser = JSONUtil.parseObj(resultUser);
             log.info("-----第三步：保存/更新用户信息-----" + objUser);
-            return objUser.toString();
+            return RetResult.success(objUser);
         }catch (Exception e){
             e.printStackTrace();
             return null;
