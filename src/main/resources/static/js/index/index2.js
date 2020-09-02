@@ -48,10 +48,11 @@ var center = {
 function getWxUserInfo(par){
     var code = getUrlParam("code");
     if (par) code = par;
-    var authorizationUrl = "../user/auth";
+    var authorizationUrl = "../index/auth";
     $.get(authorizationUrl,{code:code},function (res) {
         //保证写入的wxUserInfo是正确的
         if(res.code == 0){
+            console.log(res.data);
             localStorage.setItem('wxUserInfo',JSON.stringify(res.data));//写缓存--微信用户信息
             center.init();//渲染首页
         }

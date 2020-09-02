@@ -19,3 +19,18 @@ Oracle 12.1.0.1-atlassian-hosted
 4.外加lombaak、hutool
 5.接口api文档生成
 ```
+
+## 测试
+```
+授权方式一：http://m23j177109.iok.la/WXServer/index/index
+页面上使用vue的方式进行授权
+
+
+授权方式二：http://m23j177109.iok.la/WXServer/index/index2
+页面上使用js的方式进行授权
+
+
+授权方式三：http://m23j177109.iok.la/WXServer/index/auth2
+使用拦截器的方式实现授权，页面无需管理刷新
+
+```

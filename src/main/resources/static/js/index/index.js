@@ -1,7 +1,7 @@
 $(function () {
     var data4Vue = {
         pageUrl: 'http://m23j177109.iok.la/WXServer/index/index', //回调地址
-        auth: '../user/auth', //根据获取用户信息方法
+        auth: '../index/auth', //根据获取用户信息方法
         configUrl: '../msg/getConfig', //获取appid等配置
         appid: '',
         wxUserInfo: {} //保存用户信息
@@ -56,6 +56,7 @@ $(function () {
                 axios.get(url).then(function (res) {
                     //保证写入的wxUserInfo是正确的
                     if (res.data.code == 0) {
+                        console.log(res.data);
                         localStorage.setItem('wxUserInfo', JSON.stringify(res.data.data));//写缓存--微信用户信息
                         vue.init();//重新渲染首页
                     }

@@ -5,7 +5,6 @@ import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.zhitengda.config.WxConfig;
-import com.zhitengda.entity.WxUser;
 import com.zhitengda.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -129,9 +128,6 @@ public class WxAuthInterceptor implements HandlerInterceptor {
                   "unionid": "o6_bmasdasdsad6_2sgVt7hMZOPfL"
                 }*/
                 log.info("-----第三步：保存/更新用户信息-----" + objUser);
-                WxUser wxUser = new WxUser();
-                wxUser.setOpenId(objUser.getStr("openid"));
-                userService.saveOrUpdate(wxUser);
                 //添加session
                 req.getSession().setAttribute(USER_IFNO, objUser);
                 //保存/更新用户信息后，重定向到业务地址

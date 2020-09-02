@@ -1,4 +1,4 @@
-package com.zhitengda.api;
+package com.zhitengda.util;
 
 import io.github.yedaxia.apidocs.Docs;
 import io.github.yedaxia.apidocs.DocsConfig;
