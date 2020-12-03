@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -25,6 +26,11 @@ import java.util.Map;
  * 第二步：根据code获取用户的openid和access_token <br>
  * 第三步：根据openid和access_token获取用户的基本信息 <br>
  * 附：刷新access_token、检验授权凭证（access_token）是否有效
+ * 增加：后续可以使用redis替代session，前端使用token
+ *      1.进入拦截器时先判断token中有没有值，没有就请求微信授权接口
+ *      2.获取到用户信息后生成token，以key（token）: value(userInfo)的方式存入redis 并设置时效
+ *      3.将token写入Cookie中 并设置时效
+ *      4.后面的请求只需要校验Cookie中有没有token参数即可（同时去redis中能不能获取到数据）
  * @author langao_q
  * @since 2020-07-29 16:53
  */
@@ -42,6 +48,11 @@ public class WxAuthInterceptor implements HandlerInterceptor {
      * 授权后获取用户基本信息
      */
     final static String USER_IFNO = "userInfo";
+
+    /**
+     * token名
+     */
+    final static String COOKI_NAME_TOKEN = "token";
 
     /**
      * 获取用户数据类型
@@ -130,6 +141,8 @@ public class WxAuthInterceptor implements HandlerInterceptor {
                 log.info("-----第三步：保存/更新用户信息-----" + objUser);
                 //添加session
                 req.getSession().setAttribute(USER_IFNO, objUser);
+                //写cookie
+                addCookie(res, COOKI_NAME_TOKEN, objUser.getStr("openid"));
                 //保存/更新用户信息后，重定向到业务地址
                 res.sendRedirect(rUrl);
                 return false;
@@ -154,4 +167,33 @@ public class WxAuthInterceptor implements HandlerInterceptor {
         return mainUrl + "/callback" + "?rUrl=" + (StrUtil.isNotBlank(rUrl) ? URLEncoder.encode(rUrl, "UTF-8") : "");
     }
 
+    /**
+     * 把token写到Cookie中
+     * @param response
+     * @param name
+     * @param value
+     */
+    private void addCookie(HttpServletResponse response, String name, String value){
+        Cookie cookie = new Cookie(name, value);
+        cookie.setMaxAge(3600*24 * 7);
+        cookie.setPath("/");
+        response.addCookie(cookie);
+    }
+
+    /**
+     * 获取cookie中的token
+     * @param request
+     * @return
+     */
+    private String getTokenCookie(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null){
+            for (Cookie cookie : cookies){
+                if(cookie.getName().equals(COOKI_NAME_TOKEN)){
+                    return cookie.getValue();
+                }
+            }
+        }
+        return null;
+    }
 }

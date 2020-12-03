@@ -29,6 +29,7 @@ public class IndexController {
 
     /**
      * 跳转到vue界面
+     * 前端授权（vue）
      * @return
      */
     @RequestMapping("/index")
@@ -38,6 +39,7 @@ public class IndexController {
 
     /**
      * 跳转到html页面
+     * 前端授权（js）
      * @return
      */
     @RequestMapping("/index2")

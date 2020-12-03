@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 
+    /**
+     * 拦截器授权
+     * @return
+     */
     @RequestMapping("/auth2")
     public String auth(){
         return "index3";
