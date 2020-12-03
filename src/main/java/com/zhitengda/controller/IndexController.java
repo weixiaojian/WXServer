@@ -90,9 +90,4 @@ public class IndexController {
             return null;
         }
     }
-
-    @RequestMapping("/auth2")
-    public String auth(){
-        return "index3";
-    }
 }

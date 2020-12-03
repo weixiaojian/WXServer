@@ -42,7 +42,7 @@ spring:
 
 #-------------------------mybatis-plus配置-------------------------
 mybatis-plus:
-  mapper-locations: classpath:/com/yourpackage/*/mapper/*Mapper.xml
+  mapper-locations: classpath:/com/zhitengda/mapper/*Mapper.xml
   type-aliases-package: com.zhitengda
   global-config:
     banner: false
