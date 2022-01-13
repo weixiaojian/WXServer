@@ -16,12 +16,8 @@ import java.util.Map;
  */
 public class JsSignUtil {
 
-    public static String accessToken = null;
 
-    public static Map<String, String> sign(String url, String appId) throws UnsupportedEncodingException {
-        accessToken = AccessToken.token;
-        String jsapi_ticket = JsapiTicket.ticket;
-
+    public static Map<String, String> sign(String url, String appId, String jsapi_ticket) throws UnsupportedEncodingException {
         Map<String, String> ret = new HashMap<String, String>();
         String nonce_str = RandomUtil.randomString(16);
         String timestamp = createTimestamp();

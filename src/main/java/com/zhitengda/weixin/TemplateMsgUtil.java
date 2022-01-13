@@ -2,6 +2,7 @@ package com.zhitengda.weixin;
 
 import cn.hutool.http.HttpUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 /**
  * <p>ClassUtils<／p>
@@ -11,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
  * 微信发送模板消息类
  */
 @Slf4j
+@Component
 public class TemplateMsgUtil {
 
     /**
@@ -21,7 +23,7 @@ public class TemplateMsgUtil {
      * @param billCode 运单号
      * @return 发送结果
      */
-    public static String sendMsg(String openId, String content, String billCode) {
+    public static String sendMsg(String openId, String content, String billCode, String accessToken) {
         if (openId == null || content == null || openId.equals("") || content.equals("")) {
             return "发送内容参数不全！";
         } else {
@@ -45,7 +47,7 @@ public class TemplateMsgUtil {
                     "                   }" +
                     "           }" +
                     "       }";
-            String res = HttpUtil.post("https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=" + AccessToken.token, str);
+            String res = HttpUtil.post("https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=" + accessToken, str);
             log.info("发送模板消息结束：【res：】：" + res);
             return res;
         }
