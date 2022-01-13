@@ -8,6 +8,7 @@ import java.util.Date;
 
 /**
  * 微信表实体
+ *
  * @author langao_q
  * @since 2020-07-20 10:54
  */

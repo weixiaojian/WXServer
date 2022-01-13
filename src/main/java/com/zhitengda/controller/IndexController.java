@@ -16,6 +16,7 @@ import java.util.Map;
 
 /**
  * index控制类
+ *
  * @author langao_q
  * @since 2020-07-17 18:04
  */
@@ -30,42 +31,46 @@ public class IndexController {
     /**
      * 跳转到vue界面
      * 前端授权（vue）
+     *
      * @return
      */
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         return "index";
     }
 
     /**
      * 跳转到html页面
      * 前端授权（js）
+     *
      * @return
      */
     @RequestMapping("/index2")
-    public String index2(){
+    public String index2() {
         return "index2";
     }
 
     /**
      * 错误页面
+     *
      * @param msg 错误消息
      * @return
      */
     @RequestMapping("/error")
-    public String error(String msg){
+    public String error(String msg) {
         log.error("----错误----" + msg);
         return "error";
     }
 
     /**
      * 根据code获取用户数据 然后再返回用户数据
+     *
      * @param code code
      * @return
      */
     @ResponseBody
     @RequestMapping("/auth")
-    public RetResult authorization(String code){
+    public RetResult authorization(String code) {
         try {
             log.info("-----第一步：获取code-----" + code);
             Map<String, Object> mapOpenid = new HashMap<String, Object>();
@@ -87,7 +92,7 @@ public class IndexController {
             JSONObject objUser = JSONUtil.parseObj(resultUser);
             log.info("-----第三步：保存/更新用户信息-----" + objUser);
             return RetResult.success(objUser);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }

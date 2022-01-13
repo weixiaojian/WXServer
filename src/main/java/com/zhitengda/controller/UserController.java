@@ -15,10 +15,11 @@ public class UserController {
 
     /**
      * 拦截器授权
+     *
      * @return
      */
     @RequestMapping("/auth2")
-    public String auth(){
+    public String auth() {
         return "index3";
     }
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 
 /**
  * 统一的 REST响应对象
+ *
  * @author langao_q
  * @since 2020-07-13 14:52
  */
@@ -24,13 +25,15 @@ public class RetResult {
     }
 
     public static RetResult success() {
-        return new RetResult(SUCCESS_CODE,null,null);
+        return new RetResult(SUCCESS_CODE, null, null);
     }
+
     public static RetResult success(Object data) {
-        return new RetResult(SUCCESS_CODE,"",data);
+        return new RetResult(SUCCESS_CODE, "", data);
     }
+
     public static RetResult fail(String message) {
-        return new RetResult(FAIL_CODE,message,null);
+        return new RetResult(FAIL_CODE, message, null);
     }
 
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 微信配置类
+ *
  * @author langao_q
  * @since 2020-07-21 15:13
  */

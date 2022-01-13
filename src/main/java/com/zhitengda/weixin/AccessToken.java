@@ -2,6 +2,7 @@ package com.zhitengda.weixin;
 
 /**
  * AccessToken实体类
+ *
  * @author langao_q
  * @since 2020-07-28 10:26
  */

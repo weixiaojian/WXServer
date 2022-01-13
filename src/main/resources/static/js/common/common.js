@@ -4,10 +4,10 @@
  * @param text
  * @returns {boolean}
  */
-function checkEmpty(value,text){
+function checkEmpty(value, text) {
 
-    if(null==value || value.length==0){
-        alert(text+ "不能为空");
+    if (null == value || value.length == 0) {
+        alert(text + "不能为空");
         return false;
     }
     return true;
@@ -19,14 +19,14 @@ function checkEmpty(value,text){
  * @param text
  * @returns {boolean}
  */
-function checkNumber(value, text){
+function checkNumber(value, text) {
 
-    if(value.length==0){
-        alert(text+ "不能为空");
+    if (value.length == 0) {
+        alert(text + "不能为空");
         return false;
     }
-    if(isNaN(value)){
-        alert(text+ "必须是数字");
+    if (isNaN(value)) {
+        alert(text + "必须是数字");
         return false;
     }
     return true;
@@ -38,14 +38,14 @@ function checkNumber(value, text){
  * @param text
  * @returns {boolean}
  */
-function checkInt(value, text){
+function checkInt(value, text) {
 
-    if(value.length==0){
-        alert(text+ "不能为空");
+    if (value.length == 0) {
+        alert(text + "不能为空");
         return false;
     }
-    if(parseInt(value)!=value){
-        alert(text+ "必须是整数");
+    if (parseInt(value) != value) {
+        alert(text + "必须是整数");
         return false;
     }
     return true;
@@ -60,14 +60,14 @@ function checkInt(value, text){
 function getUrlParam(key) {
     var href = window.location.href;
     var url = href.split("?");
-    if(url.length <= 1){
+    if (url.length <= 1) {
         return "";
     }
     var params = url[1].split("&");
 
-    for(var i=0; i<params.length; i++){
+    for (var i = 0; i < params.length; i++) {
         var param = params[i].split("=");
-        if(key == param[0]){
+        if (key == param[0]) {
             return param[1];
         }
     }

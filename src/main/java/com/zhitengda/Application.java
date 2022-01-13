@@ -9,6 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * SpringBoot启动类
+ *
  * @author langao_q
  * @since 2020-07-17 18:04
  */
@@ -19,6 +20,7 @@ public class Application extends SpringBootServletInitializer {
 
     /**
      * SpringBoot启动方法
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class Application extends SpringBootServletInitializer {
 
     /**
      * 打成war 部署tomcat配置
+     *
      * @param application
      * @return
      */
